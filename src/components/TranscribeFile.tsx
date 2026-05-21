@@ -8,7 +8,8 @@ import {
 import { PDFViewer } from './PDFViewer';
 import { DeveloperCredits } from './DeveloperCredits';
 
-const API_BASE_URL = 'https://api-transcription-assemblyai.onrender.com';
+const API_BASE_URL = 'https://aseemblyia-sta.onrender.com';
+//const API_BASE_URL = 'http://127.0.0.1:5000';
 
 const DIRECT_UPLOAD_THRESHOLD = 80 * 1024 * 1024;
 
@@ -547,8 +548,8 @@ export function TranscribeFile() {
               }`}
               // 🎨 ANTES: from-[var(--color-accent)] to-[var(--color-primary)] (azul)
               style={active
-                ? { background: 'linear-gradient(to right, #8B2035, #3D0A14)', color: 'white' }
-                : { color: '#8B2035' }
+                ? { background: 'linear-gradient(to right, #2175a7, #0c4c5f)', color: 'white' }
+                : { color: '#2175a7' }
               }
             >
               <Ico className="w-5 h-5" />
@@ -561,14 +562,14 @@ export function TranscribeFile() {
       {/* Upload Card */}
       <div className="bg-white rounded-2xl shadow-lg p-8">
         <div className="mb-6">
-          <h2 className="mb-2 flex items-center gap-2" style={{ color: '#8B2035' }}>
-            <Upload className="w-6 h-6" style={{ color: '#8B2035' }} />
+          <h2 className="mb-2 flex items-center gap-2" style={{ color: '#2175a7' }}>
+            <Upload className="w-6 h-6" style={{ color: '#2175a7' }} />
             {config.uploadLabel}
           </h2>
-          <p style={{ color: '#8B2035' }}>
+          <p style={{ color: '#2175a7' }}>
             Arrastra y suelta tu archivo aqui, o haz clic para seleccionarlo
           </p>
-          <p className="text-xs mt-1" style={{ color: '#8B2035' }}>{config.hint}</p>
+          <p className="text-xs mt-1" style={{ color: '#2175a7' }}>{config.hint}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -584,8 +585,8 @@ export function TranscribeFile() {
                 : 'border-gray-300 bg-[var(--color-background)]'
             }`}
             // 🎨 borde dinámico guinda
-            style={dragActive ? { borderColor: '#8B2035' } : {}}
-            onMouseEnter={e => { if (!dragActive) (e.currentTarget as HTMLElement).style.borderColor = '#8B2035'; }}
+            style={dragActive ? { borderColor: '#2175a7' } : {}}
+            onMouseEnter={e => { if (!dragActive) (e.currentTarget as HTMLElement).style.borderColor = '#2175a7'; }}
             onMouseLeave={e => { if (!dragActive) (e.currentTarget as HTMLElement).style.borderColor = '#D1D5DB'; }}
           >
             <input
@@ -602,18 +603,18 @@ export function TranscribeFile() {
                 {/* 🎨 ANTES: from-[var(--color-accent)] to-[var(--color-primary)] (azul) */}
                 <div
                   className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
-                  style={{ background: 'linear-gradient(135deg, #8B2035, #3D0A14)' }}
+                  style={{ background: 'linear-gradient(135deg, #2175a7, #0c4c5f)' }}
                 >
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <p className="mb-2">
                   {/* 🎨 ANTES: text-[var(--color-accent)] (azul) */}
-                  <span className="underline cursor-pointer" style={{ color: '#8B2035' }}>
+                  <span className="underline cursor-pointer" style={{ color: '#2175a7' }}>
                     {config.dropLabel}
                   </span>{' '}
                   o arrastralo aqui
                 </p>
-                <p className="text-sm" style={{ color: '#8B2035' }}>
+                <p className="text-sm" style={{ color: '#2175a7' }}>
                   Formatos: {config.extensions.join(', ')}
                 </p>
               </div>
@@ -625,7 +626,7 @@ export function TranscribeFile() {
                   <FileIcon className={`w-8 h-8 ${mediaType === 'video' ? 'text-purple-600' : 'text-green-600'}`} />
                 </div>
                 <p className="mb-1"><strong>{file.name}</strong></p>
-                <p className="text-sm" style={{ color: '#8B2035' }}>{formatFileSize(file.size)}</p>
+                <p className="text-sm" style={{ color: '#2175a7' }}>{formatFileSize(file.size)}</p>
                 {mediaType === 'video' && (
                   <p className="text-xs text-purple-500 mt-1">
                     El audio del video sera extraido automaticamente
@@ -649,7 +650,7 @@ export function TranscribeFile() {
                 type="button"
                 onClick={resetForm}
                 className="px-6 py-3 rounded-xl bg-gray-200 hover:bg-gray-300 transition-all"
-                style={{ color: '#8B2035' }}
+                style={{ color: '#2175a7' }}
               >
                 Cambiar archivo
               </button>
@@ -659,7 +660,7 @@ export function TranscribeFile() {
               type="submit"
               disabled={!file || loading}
               className="flex-1 text-white px-8 py-3 rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              style={{ background: 'linear-gradient(to right, #8B2035, #3D0A14)' }}
+              style={{ background: 'linear-gradient(to right, #2175a7, #0c4c5f)' }}
             >
               {loading ? (
                 <><Loader2 className="w-5 h-5 animate-spin" /> Procesando...</>
@@ -699,7 +700,7 @@ export function TranscribeFile() {
                   }}
                 />
               </div>
-              <p className="text-xs text-right mt-1" style={{ color: '#8B2035' }}>{progress.toFixed(0)}%</p>
+              <p className="text-xs text-right mt-1" style={{ color: '#20528b' }}>{progress.toFixed(0)}%</p>
             </div>
           </div>
         )}
@@ -752,7 +753,7 @@ export function TranscribeFile() {
 
           {appError.detail && (
             <details className="cursor-pointer mb-4">
-              <summary className="text-sm hover:underline select-none" style={{ color: '#8B2035' }}>
+              <summary className="text-sm hover:underline select-none" style={{ color: '#206d8b' }}>
                 Ver detalle tecnico
               </summary>
               <pre className="mt-3 bg-gray-50 border border-gray-200 p-4 rounded-lg overflow-x-auto text-xs text-gray-700 whitespace-pre-wrap">
@@ -764,7 +765,7 @@ export function TranscribeFile() {
           <button
             onClick={resetForm}
             className="w-full py-3 bg-gray-200 hover:bg-gray-300 transition-all rounded-lg"
-            style={{ color: '#8B2035' }}
+            style={{ color: '#206d8b' }}
           >
             Intentar de nuevo
           </button>
@@ -775,29 +776,29 @@ export function TranscribeFile() {
       <div className="grid md:grid-cols-3 gap-4">
         <div className="bg-white rounded-xl p-6 shadow-sm">
           {/* 🎨 ANTES: bg-blue-100 (azul claro) */}
-          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#F5D0D6' }}>
-            <CheckCircle className="w-6 h-6" style={{ color: '#8B2035' }} />
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#d0e6f5' }}>
+            <CheckCircle className="w-6 h-6" style={{ color: '#206d8b' }} />
           </div>
           <h3 className="mb-2">Precision Alta</h3>
-          <p className="text-sm" style={{ color: '#8B2035' }}>
+          <p className="text-sm" style={{ color: '#206d8b' }}>
             Tecnologia avanzada de IA para transcripciones precisas
           </p>
         </div>
         <div className="bg-white rounded-xl p-6 shadow-sm">
-          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#F5D0D6' }}>
-            <Video className="w-6 h-6" style={{ color: '#8B2035' }} />
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#d0e6f5' }}>
+            <Video className="w-6 h-6" style={{ color: '#206d8b' }} />
           </div>
           <h3 className="mb-2">Audio y Video</h3>
-          <p className="text-sm" style={{ color: '#8B2035' }}>
+          <p className="text-sm" style={{ color: '#206d8b' }}>
             Soporta archivos de audio y video. El audio se extrae automaticamente
           </p>
         </div>
         <div className="bg-white rounded-xl p-6 shadow-sm">
-          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#F5D0D6' }}>
-            <FileAudio className="w-6 h-6" style={{ color: '#8B2035' }} />
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#d0e6f5' }}>
+            <FileAudio className="w-6 h-6" style={{ color: '#206d8b' }} />
           </div>
           <h3 className="mb-2">Multiples Formatos</h3>
-          <p className="text-sm" style={{ color: '#8B2035' }}>
+          <p className="text-sm" style={{ color: '#206d8b' }}>
             MP3, WAV, MP4, MOV, MKV, AVI y muchos mas compatibles
           </p>
         </div>

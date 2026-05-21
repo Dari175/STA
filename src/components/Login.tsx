@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Loader2, Lock, Mail, LogIn } from 'lucide-react';
 import loginLogo from '/images/LogoCircular.png';
 
-const AUTH_API_URL = 'https://login-transcriptor.onrender.com/api/auth';
+const AUTH_API_URL = 'https://login-sta.onrender.com/api/auth';
+//const AUTH_API_URL = 'http://localhost:3050/api/auth';
 
 interface LoginProps {
   onLoginSuccess: (userData: any) => void;
@@ -94,7 +95,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
   return (
     // 🎨 ANTES: from-[#003B7E] via-[#1976D2] to-[#00BCD4]
     <div className="min-h-screen flex items-center justify-center p-4"
-      style={{ background: 'linear-gradient(135deg, #3D0A14 0%, #6B1A2A 50%, #8B2035 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #0a263d 0%, #1a546b 50%, #20698b 100%)' }}
     >
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         {/* Header with Logo */}
@@ -107,7 +108,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
             />
           </div>
           {/* 🎨 ANTES: text-[#003B7E] */}
-          <h1 className="mb-2" style={{ color: '#6B1A2A' }}>Iniciar Sesión</h1>
+          <h1 className="mb-2" style={{ color: '#1a586b' }}>Iniciar Sesión</h1>
           {/* 🎨 sin cambio */}
           <p className="text-[#4A5568]">
             Sistema de Transcripción Automática
@@ -124,7 +125,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 {/* 🎨 ANTES: text-[var(--color-secondary)] → guinda medio */}
-                <Mail className="w-5 h-5" style={{ color: '#8B2035' }} />
+                <Mail className="w-5 h-5" style={{ color: '#207e8b' }} />
               </div>
               <input
                 type="email"
@@ -133,7 +134,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 // 🎨 focus:ring → guinda dorado
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
-                style={{ '--tw-ring-color': '#C9A84C' } as React.CSSProperties}
+                style={{ '--tw-ring-color': '#4cc94c' } as React.CSSProperties}
                 placeholder="usuario@ejemplo.com"
                 disabled={loading}
                 autoComplete="email"
@@ -149,7 +150,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 {/* 🎨 guinda medio */}
-                <Lock className="w-5 h-5" style={{ color: '#8B2035' }} />
+                <Lock className="w-5 h-5" style={{ color: '#20528b' }} />
               </div>
               <input
                 type="password"
@@ -178,7 +179,7 @@ export function Login({ onLoginSuccess }: LoginProps) {
             type="submit"
             disabled={loading}
             className="w-full text-white py-3 rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            style={{ background: 'linear-gradient(to right, #8B2035, #3D0A14)' }}
+            style={{ background: 'linear-gradient(to right, #20608b, #0a1e3d)' }}
           >
             {loading ? (
               <>
